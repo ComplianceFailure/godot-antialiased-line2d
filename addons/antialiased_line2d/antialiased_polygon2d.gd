@@ -10,7 +10,7 @@ extends Polygon2D
 @export var stroke_joint_mode:Line2D.LineJointMode = Line2D.LINE_JOINT_SHARP: set = set_stroke_joint_mode
 @export_range(0.0, 1000.0) var stroke_sharp_limit:float = 2.0: set = set_stroke_sharp_limit
 @export_range(1, 32) var stroke_round_precision: int = 8: set = set_stroke_round_precision
-@export var stroke_width_curve : Curve: set = set_stroke_width_curve
+@export var stroke_width_curve: Curve: set = set_stroke_width_curve
 
 var line_2d := Line2D.new()
 
@@ -21,13 +21,13 @@ func _ready() -> void:
 	line_2d.texture_filter = TextureFilter.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
 	line_2d.position = offset
 	if polygon.size() >= 1:
-		line_2d.points = AntialiasedLine2D.construct_closed_line(polygon,offset)
+		line_2d.points = AntialiasedLine2D.construct_closed_line(polygon, offset)
 	add_child(line_2d)
 
 
 func _set(property: StringName, value: Variant) -> bool:
 	if property == &"polygon":
-		line_2d.points = AntialiasedLine2D.construct_closed_line(polygon,offset)
+		line_2d.points = AntialiasedLine2D.construct_closed_line(polygon, offset)
 	elif property == &"offset":
 		line_2d.position = value
 

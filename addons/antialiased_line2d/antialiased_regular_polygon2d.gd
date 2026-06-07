@@ -13,7 +13,7 @@ extends Polygon2D
 @export var stroke_joint_mode:Line2D.LineJointMode = Line2D.LINE_JOINT_SHARP: set = set_stroke_joint_mode
 @export_range(0.0, 1000.0) var stroke_sharp_limit:float = 2.0: set = set_stroke_sharp_limit
 @export_range(1, 32) var stroke_round_precision: int = 8: set = set_stroke_round_precision
-@export var stroke_width_curve : Curve: set = set_stroke_width_curve
+@export var stroke_width_curve: Curve: set = set_stroke_width_curve
 
 var line_2d := Line2D.new()
 
@@ -44,7 +44,7 @@ func update_points() -> void:
 		points.push_back(Vector2.ZERO)
 	polygon = points
 	# Force an update of the Line2D here to prevent it from getting out of sync.
-	line_2d.points = AntialiasedLine2D.construct_closed_line(polygon,offset)
+	line_2d.points = AntialiasedLine2D.construct_closed_line(polygon, offset)
 
 
 func set_size(p_size: Vector2) -> void:
