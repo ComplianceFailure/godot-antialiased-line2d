@@ -58,8 +58,7 @@ func set_stroke_round_precision(p_stroke_round_precision: int) -> void:
 	stroke_round_precision = p_stroke_round_precision
 	line_2d.round_precision = stroke_round_precision
 
-func set_stroke_width_curve(p_stroke_width_curve: Curve) -> void:
-
 
 func set_stroke_width_curve(p_stroke_width_curve: Curve) -> void:
+	stroke_width_curve = p_stroke_width_curve
 	line_2d.width_curve = p_stroke_width_curve
